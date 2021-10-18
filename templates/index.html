@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <title>Great Number Game</title>
+</head>
+<body>
+    <div class="main">
+        <h1>Welcome to the Great Number Game!!!</h1>
+        <p>I am thinking of a number between 1 and 100</p>
+
+    
+        
+        {% if status == 'low': %}
+            <div class="box no_win">
+                <h2>Too Low!</h2>
+            </div>
+        {% elif status == 'high': %}
+            <div class="box no_win">
+                <h2>Too High!</h2>
+            </div>
+        {% elif status == 'lose': %}
+            <div class="box no_win">
+                <h2>You Lose</h2>
+                <p>The winning number was: {{ranNum}}</p>
+                <button type="submit"><a href="/destroy_session">Try Again?</a></button>
+            </div>
+        {% elif status == 'win': %}
+            <div class="box win">
+                <p>
+                    {{ranNum}} was the number!
+                    Guess Attempts: {{guesses}}
+                </p>
+                <button type="submit"><a href="/destroy_session">Play again?</a></button>
+            </div>
+        {% endif %}
+        <div class="guess">
+            <p>Take a guess!!</p>
+            <form action="/guess" method="POST">
+                <input class="input" type="number" name="guess-value" min="1" max="100">
+                <input class="button" type="Submit" value="Guess">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

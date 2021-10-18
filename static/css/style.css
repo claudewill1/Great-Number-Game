@@ -1,0 +1,63 @@
+.main {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.box {
+    color: rgb(226, 178, 57);
+    border: 2px solid black;
+    font-weight: bold;
+    text-align: center;
+    height: 200px;
+    width: 250px;
+    margin: 15px 250px;
+    
+}
+.no_win {
+    background-color: rgb(167, 36, 36);
+}
+
+.win {
+    background-color: rgb(36, 170, 36);
+}
+
+button {
+    background-color: goldenrod;
+    color: black;
+    border: 1px solid black;
+    margin-top: 15px;
+}
+
+input {
+    margin-top: 5px;
+    text-align: center;
+}
+
+a, a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.guess {
+    text-align: center;
+    background-color: darkslategray;
+    color: gold;
+    height: 150px;
+    width: 200px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    width: 150px;
+}
